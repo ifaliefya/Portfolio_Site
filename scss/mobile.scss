@@ -1,0 +1,178 @@
+$lime-green : #93c01f;
+$black-da : #101113;
+$light-gray : #f8f8f8;
+$black : #000;
+$white : #fff;
+$gray : #a9a9a9;
+
+$primary : $black-da;
+$secondary : $lime-green;
+$col-light : $light-gray;
+
+@media (max-width: 986px) {
+  .header-menu {
+    justify-content: flex-start!important;
+    &.navbar-collapse.collapse.show {
+      border: 2px solid rgba($secondary,0.5);
+      border-radius: 10px;
+      padding: 5px;
+      background-color: rgba($white,0.3);
+    }
+    &.collapsing {
+      transition: height 1s ease!important;
+    }
+    .navbar-nav {
+      width: 100%;
+      .nav-item.header-menu-item.nav-link {
+        padding : 5px 2px;
+        &:not(:first-child) {
+          border-top: .5px solid $white;
+        }
+      }
+    }
+  }
+  .navbar-light {
+    .navbar-toggler {
+      background-color: rgba($white,0.3);
+    }
+  }
+}
+
+@media (max-width:992px) {
+  .section-paragraph {
+    font-size: 0.9rem;
+  }
+
+  .col-services {
+    .content-services {
+      width: 150px;
+      height: 150px;
+    }
+    .overlay-services {
+      .icon-services{
+        font-size: 4rem;
+      }
+    }
+    .title-services {
+      font-size: 1rem;
+    }
+  
+  }
+  
+  .col-attributes {
+    margin-top: 20px;
+  }
+
+  .filter-item {
+    font-size: 18px!important;
+    letter-spacing: 0px!important;
+  }
+
+  .col-team {
+    .pict-team {
+      img {
+        object-position: center;
+        height: 220px;
+      }
+    }
+    .name-team h5{
+      font-size: 1rem;
+    }
+  }
+
+  .row.message-wrapper {
+    margin: 0px;
+  }
+}
+
+@media (max-width:767px) {
+  #hero .hero-text h1 {
+    font-size : 3.5rem;
+  }
+
+  .section-title {
+    font-size:2.7rem;
+  }
+
+  .section-paragraph {
+    font-size: 0.9rem;
+    padding: 25px;
+  }
+
+  .weare-number {
+    padding:0px;
+    .weare-number-item {
+      padding: 0px 7px;
+      flex: 1 0 15%;
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .col-services {
+    .content-services {
+      width: 150px;
+      height: 150px;
+    }
+    .overlay-services {
+      .icon-services{
+        font-size: 4rem;
+      }
+    }
+    .title-services {
+      font-size: 1rem;
+    }
+  
+  }
+  
+  .col-attributes {
+    margin-top: 20px;
+    justify-content: center;
+    .icon-attributes {
+      width: 100px;
+      text-align: center;
+    }
+    .desc-attributes {
+      width: 250px;
+    }
+  }
+
+  .filter-portofolio {
+      .filter-item {
+        font-size: 16px!important;
+        letter-spacing: 0px!important;
+      }
+  }
+
+  .col-team {
+    margin-bottom: 30px!important;
+    text-align: center;
+    .pict-team {
+      margin-bottom: 5px!important;
+      img {
+        object-position: center;
+        height: 300px;
+      }
+      .overlay-team {
+        height: 300px;
+      }
+    }
+    .name-team h5{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 567px) {
+  .col-contact {
+      margin-bottom: 30px;
+  }
+
+  #hero .hero-text h1 {
+    font-size: 2rem;
+  }
+}
