@@ -382,7 +382,7 @@ ul.experience-content {
       display: block;
       height: 100%;
       width: 1px;
-      background: black;
+      background: $grey;
       position: absolute;
       left: 0px;
       top: 5px;
@@ -411,7 +411,7 @@ ul.experience-content {
       background: $white;
       border-radius: 5px;
       cursor: pointer;
-      margin: 0 5px;
+      margin: 0 5px 10px;
       font-weight: 600;
       min-width: 50px;
       text-align: center;
@@ -461,68 +461,6 @@ ul.experience-content {
 
 
 
-// section teams
-
-.pict-team {
-  position: relative;
-  margin-bottom: 30px;
-  img {
-    max-height: 350px;
-    max-width: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  .overlay-team {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: .4;
-    background-color: $black-da;
-  }
-}
-
-.name-team {
-  h5 {
-    padding-bottom: 1px;
-  }
-  p {
-    color: $grey;
-  }
-}
-
-.desc-team {
-  color: $grey;
-}
-
-
-section {
-  &#block-call {
-    background-color: $black-da;
-  .section-title{
-    color:$light-grey;
-    margin-bottom: 40px auto 20px!important;
-    }
-  .btn{
-    &.btn-da-outline {
-      background-color: $lime-green;
-      border: 2px solid $lime-green;
-      color: $white;
-      &:hover,&:focus{
-        background-color: $black-da;
-        border-color: $lime-green;
-        color: $lime-green;
-        outline: none;
-        box-shadow: none;
-      }
-    }
-  }
-  }
-}
-
 // testimonial section
 #block-testimoni {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../img/testi-bg.jpg');
@@ -564,60 +502,6 @@ div#carousel-testimonial {
   height: 5px!important;
 }
 
-// call section
-
-//message section
-.row.message-wrapper {
-  margin : auto 20%;
-}
-
-.message-item {
-  height: 55px;
-  &:last-child {
-    height: 100px;
-    margin-top: 10px;
-  }
-}
-
-input,textarea{
-  &.message-text {
-    width: 100%;
-    border: 0px;
-    border-bottom: 1px solid $grey;
-    height: 55px;
-    padding: 5px;
-    font-size: 1rem;
-    color : $black-da;
-    text-overflow: ellipsis;
-    font-family: $font-regular;
-  }
-}
-
-textarea {
-  &#your-message {
-    height: 100px;
-    resize: none;
-  }
-}
-
-.btn-send-msg {
-  margin-top: 20px;
-}
-
-//map
-.mapouter {
-  position:relative;
-  text-align:right;
-  height:500px;
-  width:100%;
-}
-.gmap_canvas {
-  overflow:hidden;
-  background:none!important;
-  height:500px;
-  width:100%;
-}
-
 //socmed-2 
 .social-media2-wrapper {
   display: flex;
@@ -637,51 +521,52 @@ textarea {
     }
   }
 }
+
 //contact section
-
-section#block-contact{
-  background-color: $black-da;
-}
-
-.row{
-  &.row-contact{
-    justify-content: center;
-    margin: 25px 0px;
-    .col-contact{
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      i {
-        color: $light-grey;
-        &.fa{
-          margin-bottom: 10px;
-        }
-      }
-      small,b{
-        color: $grey;
-      }
-      b {
-        font-family: $font-bold;
-        letter-spacing: 2px;
-        color: $light-grey;
-        font-size: 15px;
+.row-contact{
+  justify-content: center;
+  margin: 0 0 20px;
+  .col-contact{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    a {
+      color: $black;
+      padding: 10px 5px;
+      border-radius: 10px;
+      &:hover {
+        background: $linear-background;
+        color: $white!important;
       }
     }
-    a.social-media-item {
-      padding: 0px 15px;
-      i{
-        color: $white;
-        &:hover {
-          color: $lime-green
-        }
-      }
+    i {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 30px;
     }
-    &.copyright {
-      color: $light-grey;
+    small {
+      font-size: 10px;
+    }
+    b {
+      font-family: $font-bold;
+      font-size: 12px;
     }
   }
 }
 
+.contact-form {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 10px;
+  .form-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  input, textarea {
+    font-size: 14px;
+  }
+}
 
 
 

@@ -334,7 +334,7 @@ ul.experience-content li::before {
   display: block;
   height: 100%;
   width: 1px;
-  background: black;
+  background: #a9a9a9;
   position: absolute;
   left: 0px;
   top: 5px;
@@ -362,7 +362,7 @@ ul.experience-content li:last-child::before {
   background: #fff;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 5px;
+  margin: 0 5px 10px;
   font-weight: 600;
   min-width: 50px;
   text-align: center;
@@ -406,59 +406,6 @@ ul.experience-content li:last-child::before {
   color: #a9a9a9;
 }
 
-.pict-team {
-  position: relative;
-  margin-bottom: 30px;
-}
-.pict-team img {
-  max-height: 350px;
-  max-width: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.pict-team .overlay-team {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.4;
-  background-color: #101113;
-}
-
-.name-team h5 {
-  padding-bottom: 1px;
-}
-.name-team p {
-  color: #a9a9a9;
-}
-
-.desc-team {
-  color: #a9a9a9;
-}
-
-section#block-call {
-  background-color: #101113;
-}
-section#block-call .section-title {
-  color: #f2f3f5;
-  margin-bottom: 40px auto 20px !important;
-}
-section#block-call .btn.btn-da-outline {
-  background-color: #93c01f;
-  border: 2px solid #93c01f;
-  color: #fff;
-}
-section#block-call .btn.btn-da-outline:hover, section#block-call .btn.btn-da-outline:focus {
-  background-color: #101113;
-  border-color: #93c01f;
-  color: #93c01f;
-  outline: none;
-  box-shadow: none;
-}
-
 #block-testimoni {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/testi-bg.jpg");
   object-fit: cover;
@@ -498,53 +445,6 @@ div#carousel-testimonial .carousel-inner {
   height: 5px !important;
 }
 
-.row.message-wrapper {
-  margin: auto 20%;
-}
-
-.message-item {
-  height: 55px;
-}
-.message-item:last-child {
-  height: 100px;
-  margin-top: 10px;
-}
-
-input.message-text, textarea.message-text {
-  width: 100%;
-  border: 0px;
-  border-bottom: 1px solid #a9a9a9;
-  height: 55px;
-  padding: 5px;
-  font-size: 1rem;
-  color: #101113;
-  text-overflow: ellipsis;
-  font-family: "Poppins";
-}
-
-textarea#your-message {
-  height: 100px;
-  resize: none;
-}
-
-.btn-send-msg {
-  margin-top: 20px;
-}
-
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 500px;
-  width: 100%;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 500px;
-  width: 100%;
-}
-
 .social-media2-wrapper {
   display: flex;
   flex-direction: row;
@@ -562,43 +462,47 @@ textarea#your-message {
   object-fit: cover;
 }
 
-section#block-contact {
-  background-color: #101113;
-}
-
-.row.row-contact {
+.row-contact {
   justify-content: center;
-  margin: 25px 0px;
+  margin: 0 0 20px;
 }
-.row.row-contact .col-contact {
+.row-contact .col-contact {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.row.row-contact .col-contact i {
-  color: #f2f3f5;
+.row-contact .col-contact a {
+  color: #000;
+  padding: 10px 5px;
+  border-radius: 10px;
 }
-.row.row-contact .col-contact i.fa {
-  margin-bottom: 10px;
+.row-contact .col-contact a:hover {
+  background: linear-gradient(45deg, #d001d8, #f441a5, #f9c1c8);
+  color: #fff !important;
 }
-.row.row-contact .col-contact small, .row.row-contact .col-contact b {
-  color: #a9a9a9;
+.row-contact .col-contact i {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 30px;
 }
-.row.row-contact .col-contact b {
+.row-contact .col-contact small {
+  font-size: 10px;
+}
+.row-contact .col-contact b {
   font-family: "Poppins";
-  letter-spacing: 2px;
-  color: #f2f3f5;
-  font-size: 15px;
+  font-size: 12px;
 }
-.row.row-contact a.social-media-item {
-  padding: 0px 15px;
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
-.row.row-contact a.social-media-item i {
-  color: #fff;
+.contact-form .form-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 3px;
 }
-.row.row-contact a.social-media-item i:hover {
-  color: #93c01f;
-}
-.row.row-contact.copyright {
-  color: #f2f3f5;
+.contact-form input, .contact-form textarea {
+  font-size: 14px;
 }
