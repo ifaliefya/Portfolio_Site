@@ -24,9 +24,11 @@ body {
   color: #000;
 }
 
+a {
+  text-decoration: none;
+}
 a:hover {
   color: #f441a5 !important;
-  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,13 +41,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-gradient {
   background: linear-gradient(45deg, #d001d8, #f441a5, #f9c1c8);
-  border-color: transparent;
+  border-color: #fff;
   color: #fff;
 }
 .btn-gradient:hover, .btn-gradient:focus {
   background: #fff;
   color: #f441a5;
   border-color: #f441a5;
+}
+.btn-gradient:focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 65, 165, 0.25);
 }
 
 .bg-peach {
@@ -60,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header {
-  padding: 15px;
+  padding: 15px 0 15px 15px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -80,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   list-style: none;
+  flex-direction: column !important;
 }
 #header .nav-menu ul li a {
   color: #45505b;
@@ -374,7 +380,6 @@ ul.experience-content li:last-child::before {
 
 .portofolio-item {
   position: relative;
-  display: inline-block;
   width: 100%;
   margin: 0px;
   min-height: 500px;
@@ -382,67 +387,102 @@ ul.experience-content li:last-child::before {
 .portofolio-item .item {
   margin-bottom: 20px;
 }
+.portofolio-item .item .card {
+  border-radius: 10px;
+  height: 100%;
+}
+.portofolio-item .item .card-image {
+  position: relative;
+  height: 0;
+  padding-bottom: 65%;
+}
 .portofolio-item .item img {
   object-fit: cover;
   object-position: center;
-  width: 100%;
-  height: 250px;
+  height: 100%;
+  position: absolute;
+  border: 10px solid white;
+  border-radius: 10px;
 }
 .portofolio-item .item .card-body {
-  padding-top: 30px;
+  padding: 15px 10px 45px;
   position: relative;
 }
 .portofolio-item .item .card-body span.category-badge {
   position: absolute;
-  top: -15px;
+  top: -30px;
   background: white;
   padding: 5px 12px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   left: 50%;
   transform: translateX(-50%);
   color: #a9a9a9;
+  font-weight: 600;
+  font-size: 0.6rem;
+}
+.portofolio-item .item .card-body .card-title {
+  font-size: 1rem;
+  font-weight: 600;
 }
 .portofolio-item .item .card-body .card-text {
   color: #a9a9a9;
+  font-size: 0.8rem;
+  height: 55px;
+  overflow: hidden;
+}
+.portofolio-item .item .card-body .btn-gradient {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#block-testimoni {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/testi-bg.jpg");
-  object-fit: cover;
-  width: 100%;
+.carousel .carousel-item .carousel-image {
+  position: relative;
+  padding-bottom: 65%;
 }
-
-div#carousel-testimonial {
-  height: 30vh;
-  display: block;
-  align-items: center;
-}
-div#carousel-testimonial .carousel-inner {
+.carousel .carousel-item .carousel-image img {
   height: 100%;
-  display: flex;
-  align-items: center;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
 }
-
-.carousel-item .row.testimonial-list {
-  margin: auto 10%;
+.carousel .carousel-item .carousel-caption {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px 15px 30px;
+  background: rgba(0, 0, 0, 0.35);
 }
-.carousel-item .row.testimonial-list .col-md-12.testimonial-text {
-  color: #fff;
-  text-align: center;
+.carousel .carousel-item .carousel-caption h5 {
+  margin-bottom: 0;
 }
-.carousel-item .row.testimonial-list .col-md-12.testimonial-text .testimonial-profile {
-  margin-top: 20px;
-  color: #f2f3f5;
+.carousel .carousel-item .carousel-caption span {
+  font-style: italic;
+  color: #f9c1c8;
 }
-.carousel-item .row.testimonial-list .col-md-12.testimonial-text .testimonial-profile b {
-  font-family: "Poppins";
-  display: block;
+.carousel .carousel-item .carousel-caption p {
+  font-size: 0.75rem;
 }
-
-.carousel-indicators li {
-  border-radius: 50%;
-  width: 5px !important;
-  height: 5px !important;
+.carousel .carousel-control-next, .carousel .carousel-control-prev {
+  width: 10%;
+  opacity: 1;
+}
+.carousel .carousel-control-next .carousel-control-icon, .carousel .carousel-control-prev .carousel-control-icon {
+  background-image: none;
+}
+.carousel .carousel-control-next .carousel-control-icon .fa, .carousel .carousel-control-prev .carousel-control-icon .fa {
+  font-size: 1.5rem;
+}
+.carousel .carousel-control-next:hover .fa, .carousel .carousel-control-prev:hover .fa {
+  color: #f441a5;
+}
+.carousel .carousel-indicators {
+  margin-bottom: 0.5rem;
+}
+.carousel .carousel-indicators [data-bs-target].active {
+  background-color: #f441a5;
 }
 
 .social-media2-wrapper {

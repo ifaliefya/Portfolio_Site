@@ -55,9 +55,11 @@ body {
   color: $black;
 }
 
-a:hover {
-  color: $secondary!important;
+a {
   text-decoration: none;
+  &:hover {
+    color: $secondary!important;
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -67,15 +69,19 @@ h1,h2,h3,h4,h5,h6 {
 .bg-gradient {
   background: $linear-background;
 }
+
 .btn-gradient {
   background: $linear-background;
-  border-color: transparent;
+  border-color: $white;
   color: $white;
   &:hover,&:focus {
     // opacity: 0.6;
     background: $white;
     color: $red;
     border-color: $red;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($red,.25);
   }
 }
 
@@ -91,7 +97,7 @@ h1,h2,h3,h4,h5,h6 {
 
 // start styling
 #header {
-  padding: 15px;
+  padding: 15px 0 15px 15px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -109,6 +115,7 @@ h1,h2,h3,h4,h5,h6 {
       padding: 0;
       margin: 0;
       list-style: none;
+      flex-direction: column!important;
       li {
         a {
           color: $dark-grey;
@@ -423,37 +430,62 @@ ul.experience-content {
   }
 }
 
-
 .portofolio-item {
   position: relative;
-  display: inline-block;
   width: 100%;
   margin:0px;
   min-height: 500px;
   .item {
     margin-bottom: 20px;
+    .card {
+      border-radius: 10px;
+      height: 100%;
+    }
+    .card-image {
+      position: relative;
+      height: 0;
+      padding-bottom: 65%;
+    }
     img {
       object-fit: cover;
       object-position: center;
-      width: 100%;
-      height: 250px;
+      height: 100%;
+      position: absolute;
+      border: 10px solid white;
+      border-radius: 10px;
     }
 
     .card-body {
-      padding-top: 30px;
+      padding: 15px 10px 45px;
       position: relative;
       span.category-badge {
         position: absolute;
-        top: -15px;
+        top: -30px;
         background: white;
         padding: 5px 12px;
-        border-radius: 10px;
+        border-radius: 10px 10px 0px 0px;
         left: 50%;
         transform: translateX(-50%);
         color: $grey;
+        font-weight: 600;
+        font-size: 0.6rem;
+      }
+      .card-title {
+        font-size: 1rem;
+        font-weight: 600;
       }
       .card-text {
         color: $grey;
+        font-size: 0.8rem;
+        height: 55px;
+        overflow: hidden;
+      }
+      .btn-gradient {
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
@@ -462,44 +494,59 @@ ul.experience-content {
 
 
 // testimonial section
-#block-testimoni {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../img/testi-bg.jpg');
-  object-fit: cover;
-  width: 100%;
-}
-div#carousel-testimonial {
-  height: 30vh;
-  display: block;
-  align-items: center;
-  .carousel-inner {
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-}
-
-.carousel-item {
-  .row.testimonial-list {
-    margin: auto 10%;
-    .col-md-12.testimonial-text {
-      color: $white;
-      text-align: center;
-      .testimonial-profile {
-        margin-top: 20px;
-        color : $light-grey;
-        b {
-          font-family: $font-bold;
-          display: block;
-        }
+.carousel {
+  .carousel-item {
+    .carousel-image {
+      position: relative;
+      padding-bottom: 65%;
+      img {
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .carousel-caption {
+      right: 0;
+      left: 0;
+      bottom: 0;
+      padding: 20px 15px 30px;
+      background: rgba($black,.35);
+      h5 {
+        margin-bottom: 0;
+      }
+      span {
+        font-style: italic;
+        color: $peach;
+      }
+      p {
+        font-size: 0.75rem;
       }
     }
   }
-}
-
-.carousel-indicators li {
-  border-radius: 50%;
-  width: 5px!important;
-  height: 5px!important;
+  .carousel-control-next, .carousel-control-prev {
+    width: 10%;
+    opacity: 1;
+    .carousel-control-icon {
+      background-image: none;
+      .fa {
+        font-size: 1.5rem;
+      }
+    }
+    &:hover {
+      .fa {
+        color: $red;
+      }
+    }
+  }
+  .carousel-indicators {
+    margin-bottom: 0.5rem;
+    [data-bs-target] {
+      &.active {
+        background-color: $red;
+      }
+    }
+  }
 }
 
 //socmed-2 
