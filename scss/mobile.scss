@@ -30,54 +30,113 @@ $col-light : $light-grey;
   }
 }
 
-@media (max-width: 986px) {
-  .header-menu {
-    justify-content: flex-start!important;
-    &.navbar-collapse.collapse.show {
-      border: 2px solid rgba($secondary,0.5);
-      border-radius: 10px;
-      padding: 5px;
-      background-color: rgba($white,0.3);
+@media (max-width: 767.9px) {
+  // navbar toggle on mobile display
+  .nav-toggler {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 50;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background: white;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
+    .fa {
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: all 0.5s ease;
     }
-    &.collapsing {
-      transition: height 1s ease!important;
-    }
-    .navbar-nav {
-      width: 100%;
-      .nav-item.header-menu-item.nav-link {
-        padding : 5px 2px;
-        &:not(:first-child) {
-          border-top: .5px solid $white;
+
+    &.clicked {
+      background: $red;
+      .fa {
+        color: $white;
+        font-size: 1.3rem;
+        &::before {
+          content: "\f00d";
         }
       }
     }
   }
-  .navbar-light {
-    .navbar-toggler {
-      background-color: rgba($white,0.3);
+  #header {
+      left: -75px;
+      transition: left 0.5s ease-in-out;
+    &.open-header {
+      left: 0;
     }
   }
 }
 
-@media (max-width:992px) {
-  .section-paragraph {
-    font-size: 0.9rem;
+//styling for mobile display
+@media (max-width: 767.9px) {
+  .hero-image, .content-section {
+    padding: 50px 0;
   }
 
-  .filter-item {
-    font-size: 18px!important;
-    letter-spacing: 0px!important;
+  #hero .hero-text {
+    text-align: center;
+    padding-bottom: 20px;
+    .hero-social-media {
+      position: static;
+      margin-top: 20px;
+    }
+    h1 {
+      font-size : 3rem;
+    }  
+  }
+
+  .section-title {
+    font-size:1.8rem;
+    padding-bottom: 15px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    small {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+  }
+
+  .portofolio-item .item .card-body .btn-gradient {
+    display: block;
+    width: 80%;
+  }
+
+  .carousel .carousel-item .carousel-caption {
+    position: static;
+    span {
+      font-size: 0.8rem;
+      color: $white;
+    }
+    p {
+      height: 40px;
+      overflow: hidden;
+    }
   }
 
 }
 
-@media (max-width:767px) {
-  #hero .hero-text h1 {
-    font-size : 3.5rem;
-  }
+@media (max-width: 575.9px) {
 
-  .section-title {
-    font-size:2.7rem;
+  .carousel .carousel-item .carousel-caption {
+    p {
+      height: 60px;
+    }
   }
-
+  .footer-bottom-credit  {
+    flex-flow: column-reverse;
+    & > div {
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      justify-content: center!important;
+    }
+    .footer-social-media {
+      margin-bottom: 20px;
+    }
+  }
 }
